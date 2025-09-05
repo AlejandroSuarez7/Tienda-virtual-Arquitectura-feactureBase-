@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>
-        Tienda Deportiva
+        Rugby Base
       </NavLink>
       <nav className={styles.nav}>
         <NavLink to="/" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>
