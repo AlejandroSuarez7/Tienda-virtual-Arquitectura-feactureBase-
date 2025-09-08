@@ -6,3 +6,6 @@ body {
   background-color: #f4f7f9;
   color: #333;
 }
+body {
+  padding-top: 80px; /* mismo alto que el header */
+}
