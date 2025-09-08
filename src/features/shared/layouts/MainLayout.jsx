@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
+import { CartProvider } from '../../cart/CartContext';
 
 export function MainLayout() {
   const layoutStyle = { 
@@ -18,12 +19,14 @@ export function MainLayout() {
   };
 
   return (
-    <div style={layoutStyle}>
-      <Header />
-      <main style={mainStyle}>
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+    <CartProvider>
+      <div style={layoutStyle}>
+        <Header />
+        <main style={mainStyle}>
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    </CartProvider>
   );
 }

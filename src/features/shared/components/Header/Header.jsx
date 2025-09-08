@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
+import { useCart } from '../../../cart/CartContext';
+import CartModal from '../../../cart/CartModal';
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+  const { items } = useCart();
+  const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>
@@ -15,10 +21,33 @@ export function Header() {
         <NavLink to="/productos" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>
           Productos
         </NavLink>
-        <NavLink to="/carrito" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>
-          Carrito
-        </NavLink>
+        <button
+          onClick={() => setOpen(true)}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            position: 'relative',
+            marginLeft: '1rem',
+            fontSize: 18
+          }}
+        >
+          🛒
+          {totalItems > 0 && (
+            <span style={{
+              position: 'absolute',
+              top: -8,
+              right: -8,
+              background: '#e33',
+              color: '#fff',
+              borderRadius: '50%',
+              padding: '2px 7px',
+              fontSize: 12
+            }}>{totalItems}</span>
+          )}
+        </button>
       </nav>
+      <CartModal open={open} onClose={() => setOpen(false)} />
     </header>
   );
 }

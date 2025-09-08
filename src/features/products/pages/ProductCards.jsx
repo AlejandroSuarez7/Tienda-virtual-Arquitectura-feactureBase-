@@ -1,6 +1,13 @@
 import React from "react";
-import "./stylesCards.css"
-function ProductCard({ title, description, price, category, image, rating }) {
+import "./stylesCards.css";
+import { useCart } from '../../cart/CartContext';
+function ProductCard({ title, description, price, category, image, rating, id }) {
+    const { addToCart } = useCart();
+
+    const handleAdd = () => {
+        addToCart({ id, title, description, price, category, image, rating });
+    };
+
     return (
         <article className="product-card">
         <div className="image-wrap">
@@ -13,6 +20,21 @@ function ProductCard({ title, description, price, category, image, rating }) {
             <div className="bottom-row">
             <p className="price">${price}</p>
             <p className="rating">⭐ {rating?.rate} ({rating?.count})</p>
+            <button
+                onClick={handleAdd}
+                style={{
+                    background: '#2d7',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '4px',
+                    padding: '0.5rem 1rem',
+                    cursor: 'pointer',
+                    marginLeft: '1rem',
+                    boxShadow: '0 1px 4px #bbb'
+                }}
+            >
+                Agregar al carrito
+            </button>
             </div>
         </div>
         </article>
