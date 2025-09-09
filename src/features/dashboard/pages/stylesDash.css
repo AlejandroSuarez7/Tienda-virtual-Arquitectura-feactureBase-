@@ -1,0 +1,55 @@
+    .dashboard-container {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #111213, #0e1a27);
+    
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+    box-shadow: 0 10px 35px  #111213;
+    }
+
+    .titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    }
+
+    .subtitulo {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    }
+
+    .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    }
+
+    .carousel-slide img {
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: all 0.5s ease-in-out;
+    }
+
+    .btn-prev,
+    .btn-next {
+    background: rgba(255,255,255,0.3);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+    }
+
+    .btn-prev:hover,
+    .btn-next:hover {
+    background: rgba(255,255,255,0.6);
+    }

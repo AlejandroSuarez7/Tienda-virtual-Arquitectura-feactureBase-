@@ -1,0 +1,155 @@
+    .nosotros-header {
+    position: relative;
+    background: url("https://media.cnn.com/api/v1/images/stellar/prod/cnne-1449325-copia-de-foto-para-wp-2023-09-07t080644-082.jpg?c=16x9&q=h_833,w_1480,c_fill") center/cover no-repeat;
+    color: white;
+    padding: 80px 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    }
+
+    /* Overlay oscuro encima de la imagen */
+    .nosotros-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 36, 54, 0.85); /* 👈 color #132436 con opacidad */
+    z-index: 0;
+    border-radius: 15px;
+    }
+
+    .nosotros-header h1,
+    .nosotros-header p {
+    position: relative;
+    z-index: 1;
+    }
+
+    .nosotros-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #1abc9c; /* contraste con el fondo */
+    }
+
+    .nosotros-header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+    }
+
+
+    /* Misión y Visión */
+    .nosotros-mision-vision {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    }
+
+    .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    max-width: 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+    transform: translateY(-8px);
+    }
+
+    .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    }
+
+    .card h2 {
+    color: #1abc9c;
+    margin: 15px 0;
+    }
+
+    /* Valores */
+    .nosotros-valores h2 {
+    margin-bottom: 20px;
+    color: #1abc9c;
+    }
+
+    .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    }
+
+    .valor-card {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+    }
+
+    .valor-card:hover {
+    background: #1abc9c;
+    color: white;
+    }
+
+    /* Equipo */
+    .nosotros-equipo {
+    margin: 50px 0;
+    }
+
+    .equipo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    }
+
+    .equipo-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    max-width: 220px;
+    }
+
+    .equipo-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    }
+
+    /* CTA */
+    .nosotros-cta {
+    background: #1abc9c;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+    }
+
+    .btn-cta {
+    background: white;
+    color: #1abc9c;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    }
+
+    .btn-cta:hover {
+    background: #16a085;
+    color: white;
+    }

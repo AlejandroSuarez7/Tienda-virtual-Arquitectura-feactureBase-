@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(90deg, #171819, #1f2123);
+  background: linear-gradient(90deg, #1f2123, #132436);
   color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   position: fixed;
@@ -27,6 +27,11 @@
 }
 
 /* LOGO */
+.logo > img {
+  width: 30px;
+  filter: invert(54%) sepia(43%) saturate(570%) hue-rotate(123deg) brightness(95%) contrast(85%);
+}
+
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
@@ -73,27 +78,22 @@
 }
 
 /* ACTIVO */
+/* ACTIVO */
 .activeLink {
   color: #1abc9c;
-  font-weight: normal; /* 👈 NO cambia el tamaño */
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  font-weight: normal; /* mantiene tamaño uniforme */
 }
 
-.activeLink::after {
-  width: 100%; /* 👈 raya siempre visible */
-}
-
-/* MOBILE MENU */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+.activeLink::before {
+  content: "";
+  position: absolute;
+  width: 100%;  /* 👈 ahora la raya siempre estará visible */
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #1abc9c;
+  transition: width 0.3s ease;
 }

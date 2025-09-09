@@ -20,22 +20,12 @@ function ProductCard({ title, description, price, category, image, rating, id })
             <div className="bottom-row">
             <p className="price">${price}</p>
             <p className="rating">⭐ {rating?.rate} ({rating?.count})</p>
+            </div>
             <button
                 onClick={handleAdd}
-                style={{
-                    background: '#2d7',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: '4px',
-                    padding: '0.5rem 1rem',
-                    cursor: 'pointer',
-                    marginLeft: '1rem',
-                    boxShadow: '0 1px 4px #bbb'
-                }}
-            >
-                Agregar al carrito
+                style={{background: '#2d7',color: '#fff',border: 'none',borderRadius: '4px',padding: '0.5rem 1rem',cursor: 'pointer',marginLeft: '1rem',boxShadow: '0 1px 4px #bbb'}}>
+                Agregar al carrito 🛒
             </button>
-            </div>
         </div>
         </article>
     );

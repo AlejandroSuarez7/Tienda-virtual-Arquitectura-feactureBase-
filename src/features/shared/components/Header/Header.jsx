@@ -12,7 +12,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>
-        Rugby Base
+        Rugby Base <img src="https://cdn-icons-png.flaticon.com/512/73/73509.png"/>
       </NavLink>
       <nav className={styles.nav}>
         <NavLink to="/" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>
@@ -20,6 +20,9 @@ export function Header() {
         </NavLink>
         <NavLink to="/productos" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>
           Productos
+        </NavLink>
+        <NavLink to="/Nosotros" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>
+          Nosotros
         </NavLink>
         <button
           onClick={() => setOpen(true)}
