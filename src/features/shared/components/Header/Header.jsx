@@ -7,7 +7,8 @@ import CartModal from '../../../cart/CartModal';
 export function Header() {
   const [open, setOpen] = useState(false);
   const { items } = useCart();
-  const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
+  // Ahora cada item es una entrada individual, así que el total es simplemente items.length
+  const totalItems = items.length;
 
   return (
     <header className={styles.header}>

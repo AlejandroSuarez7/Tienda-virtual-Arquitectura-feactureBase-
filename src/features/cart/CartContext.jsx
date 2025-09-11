@@ -9,26 +9,17 @@ const initialState = {
 function cartReducer(state, action) {
   switch (action.type) {
     case 'ADD_TO_CART': {
-      const existing = state.items.find(item => item.id === action.payload.id);
-      if (existing) {
-        return {
-          ...state,
-          items: state.items.map(item =>
-            item.id === action.payload.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          ),
-        };
-      }
+      // Cada adición es una entrada individual
       return {
         ...state,
-        items: [...state.items, { ...action.payload, quantity: 1 }],
+        items: [...state.items, { ...action.payload, cartItemId: Date.now() + Math.random() }],
       };
     }
     case 'REMOVE_FROM_CART': {
+      // Eliminar solo la entrada específica por cartItemId
       return {
         ...state,
-        items: state.items.filter(item => item.id !== action.payload),
+        items: state.items.filter(item => item.cartItemId !== action.payload),
       };
     }
     case 'CLEAR_CART': {
@@ -46,15 +37,15 @@ export function CartProvider({ children }) {
     dispatch({ type: 'ADD_TO_CART', payload: product });
   };
 
-  const removeFromCart = id => {
-    dispatch({ type: 'REMOVE_FROM_CART', payload: id });
+  const removeFromCart = cartItemId => {
+    dispatch({ type: 'REMOVE_FROM_CART', payload: cartItemId });
   };
 
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' });
   };
 
-  const total = state.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = state.items.reduce((acc, item) => acc + item.price, 0);
 
   return (
     <CartContext.Provider value={{ ...state, addToCart, removeFromCart, clearCart, total }}>
