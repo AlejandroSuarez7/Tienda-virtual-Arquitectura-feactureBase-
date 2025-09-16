@@ -9,12 +9,12 @@ function ProductList() {
 
     useEffect(() => {
         // Cambia la URL por la de tu API Node.js
-        axios.get("http://localhost:3001/api/products")
+        axios.get("https://api-para-tienda-rugby.onrender.com/api/products")
             .then(res => {
                 setProducts(res.data);
                 setLoading(false);
             })
-            .catch(err => {
+                .catch(() => {
                 setError("Error al cargar productos");
                 setLoading(false);
             });

@@ -17,26 +17,19 @@ export function DashboardPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    );
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  // 👇 Cambio automático cada 4 segundos
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev === images.length - 1 ? 0 : prev + 1
-      );
-    }, 4000); // 4000ms = 4 segundos
+      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 4000);
 
-    return () => clearInterval(interval); // Limpia el intervalo al desmontar
+    return () => clearInterval(interval);
   }, [images.length]);
 
   return (
@@ -47,17 +40,13 @@ export function DashboardPage() {
       </p>
 
       <div className="carousel-container">
-        <button className="btn-prev" onClick={prevSlide}>
-          ⬅
-        </button>
+        <button className="btn-prev" onClick={prevSlide}>⬅</button>
 
         <div className="carousel-slide">
           <img src={images[currentIndex]} alt={`Rugby ${currentIndex}`} />
         </div>
 
-        <button className="btn-next" onClick={nextSlide}>
-          ➡
-        </button>
+        <button className="btn-next" onClick={nextSlide}>➡</button>
       </div>
     </div>
   );
