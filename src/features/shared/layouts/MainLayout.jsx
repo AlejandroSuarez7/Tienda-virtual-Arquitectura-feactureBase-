@@ -12,10 +12,10 @@ export function MainLayout() {
   };
   const mainStyle = {
     flexGrow: 1,
-    padding: '2rem',
     maxWidth: '1200px',
     width: '100%',
-    margin: '0 auto'
+    margin: '0 auto',
+    paddingBottom: '2.5rem',
   };
 
   return (

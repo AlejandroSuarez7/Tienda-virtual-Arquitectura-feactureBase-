@@ -8,15 +8,15 @@ function ProductList() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Cambia la URL por la de tu API Node.js
         axios.get("https://api-para-tienda-rugby.onrender.com/api/products")
             .then(res => {
                 setProducts(res.data);
                 setLoading(false);
             })
-                .catch(() => {
-                setError("Error al cargar productos");
+            .catch((err) => {
+                setError("Error al cargar productos. Intenta más tarde.");
                 setLoading(false);
+                console.error("Error al obtener productos:", err);
             });
     }, []);
 

@@ -16,7 +16,7 @@ function Nosotros() {
         {/* Misión y visión */}
         <section className="nosotros-mision-vision">
             <div className="card">
-            <img src="https://source.unsplash.com/600x400/?rugby,team" alt="Misión Rugby" />
+            <img src="https://i0.wp.com/www.laescueladeemprendedores.com/wp-content/uploads/2014/04/Misi%C3%B3n.png?fit=384%2C385&ssl=1" alt="Misión Rugby" />
             <h2>Nuestra Misión</h2>
             <p>
                 Inspirar a las nuevas generaciones a practicar rugby, fomentando los valores de respeto, 
@@ -24,7 +24,7 @@ function Nosotros() {
             </p>
             </div>
             <div className="card">
-            <img src="https://source.unsplash.com/600x400/?rugby,goal" alt="Visión Rugby" />
+            <img src="https://cefolog.weebly.com/uploads/5/8/4/8/58488755/vision-pagina_orig.png" alt="Visión Rugby" />
             <h2>Nuestra Visión</h2>
             <p>
                 Ser la comunidad de referencia para jugadores y aficionados de rugby en Latinoamérica, 
