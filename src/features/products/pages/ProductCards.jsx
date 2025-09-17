@@ -1,6 +1,6 @@
 import React from "react";
 import "./stylesCards.css";
-import { useCart } from '../../cart/CartContext';
+import { useCart } from '../../cart/useCart';
 function ProductCard({ title, description, price, category, image, rating, id }) {
     const { addToCart } = useCart();
 

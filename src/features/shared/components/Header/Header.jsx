@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
-import { useCart } from '../../../cart/CartContext';
+import { useCart } from '../../../cart/useCart';
 import CartModal from '../../../cart/CartModal';
 
 export function Header() {

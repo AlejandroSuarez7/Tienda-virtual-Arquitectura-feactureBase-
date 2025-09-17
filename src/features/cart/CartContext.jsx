@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useReducer } from 'react';
-
-export const CartContext = createContext();
+import React, { useReducer } from 'react';
+import { CartContext } from './CartContextInstance';
 
 const initialState = {
   items: [],
@@ -54,4 +53,4 @@ export function CartProvider({ children }) {
   );
 }
 
-export const useCart = () => useContext(CartContext);
+// El hook useCart se movió a useCart.js para cumplir con react-refresh/only-export-components

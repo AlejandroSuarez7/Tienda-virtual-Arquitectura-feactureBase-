@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../cart/CartContext';
+import { useCart } from '../cart/useCart';
 
 export default function CartModal({ open, onClose }) {
   const { items, total, removeFromCart } = useCart();
